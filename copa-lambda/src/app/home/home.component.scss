@@ -1,0 +1,47 @@
+@import '../../styles.scss';
+
+section,
+article,
+button {
+    margin-left: 100px;
+}
+
+.home {    
+    height: 100vh;
+    padding: 7rem 0;
+    background-color: $blue;
+}
+
+.home__greeting {
+    margin-top: 286px;
+}
+
+
+p {
+    font-size: 36px;
+    color: $white;
+    &:nth-child(2) {
+        margin-top: 24px;
+        font-size: 53px;
+    }
+}
+
+span {
+    font-weight: bold;
+}
+
+article {
+    width: 30rem;
+    margin-top: 32px;
+    color: $white;
+}
+
+button {
+    margin-top: 40px;
+    background-color: $green;
+    color: $black;
+    font-weight: 500;
+    padding: 16px 32px;
+    border-radius: 16px;
+    border: none;
+}
