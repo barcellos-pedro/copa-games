@@ -1,3 +1,22 @@
 <div class="selecao">
-    <p>selecao works!</p>
+    <div class="header">
+        <a class="header__voltar" [routerLink]="['/']">
+            <img src="../../assets/images/seta-esquerda.svg" alt="">
+            <p>Voltar para o início</p>
+        </a>
+        <p class="header__title">Copa<span>Games</span></p>
+    </div>
+    <div class="description">
+        <p>1. Seleção</p>
+        <p>Para começar, selecione 8 jogos para entrar na competição e depois clique em Gerar Campeonato para prosseguir.</p>
+    </div>
+    <div class="options">
+        <div class="options__selected">
+            <p><span class="options__count">[0] de [8]</span> selecionados</p>
+        </div>
+        <button class="play">Gerar campeonato</button>
+    </div>
+    <div class="games">
+
+    </div>
 </div>

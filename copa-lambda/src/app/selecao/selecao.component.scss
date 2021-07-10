@@ -1,3 +1,67 @@
+@import '../../assets/scss/main';
+
 .selecao {
     padding-top: 7rem;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.header {
+    display: inline;
+    text-align: center;
+}
+
+.header__voltar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    img {
+        margin-right: 18px;
+    }
+}
+
+.header__title {
+    font-size: 34px;
+    color: $green;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    > p:first-child {
+        margin-right: 41px;
+        font-size: 36px;
+        color: $blue;
+        font-weight: 700;
+    }
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.options__count {
+    color: $green;
+    font-weight: bold;
+}
+
+button {
+    background-color: $green;
+    color: $black;
+    font-weight: 500;
+    padding: 16px 32px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.disabled {
+    background-color: $silver;
+    color: #7E7E7E;
 }
