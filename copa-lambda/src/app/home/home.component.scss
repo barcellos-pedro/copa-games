@@ -7,8 +7,10 @@ button {
 }
 
 .home {    
+    display: flex;
+    justify-content: space-between;
     height: 100vh;
-    padding: 7rem 0;
+    padding: 5rem 0;
     background-color: $blue;
 }
 
@@ -31,9 +33,10 @@ span {
 }
 
 article {
-    width: 30rem;
+    width: 28rem;
     margin-top: 32px;
     color: $white;
+    text-align: justify;
 }
 
 button {
@@ -44,4 +47,13 @@ button {
     padding: 16px 32px;
     border-radius: 16px;
     border: none;
+}
+
+img {
+    max-height: 90vh;
+    max-width: 100%;
+}
+
+@media (max-width: 1023px) {
+
 }
