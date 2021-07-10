@@ -17,6 +17,8 @@
         <button class="play">Gerar campeonato</button>
     </div>
     <div class="games">
-
+        <ng-container *ngFor="let card of [].constructor(16)">
+            <app-card></app-card>
+        </ng-container>
     </div>
 </div>

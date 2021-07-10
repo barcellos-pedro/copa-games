@@ -25,6 +25,9 @@
 .header__title {
     font-size: 34px;
     color: $green;
+    span {
+        font-weight: bold;
+    }
 }
 
 .description {
@@ -64,4 +67,11 @@ button {
 .disabled {
     background-color: $silver;
     color: #7E7E7E;
+}
+
+.games {
+    margin-top: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
 }
