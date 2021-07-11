@@ -44,12 +44,14 @@ export class SelecaoComponent implements OnInit, OnDestroy {
 
   play() {
     console.log(this.selectedGames);
-    if(this.selectedGames.length == 8) {
-      this.service.play(this.selectedGames);
-      this.router.navigate(['resultado']);
-    } else {
+
+    if(this.selectedGames.length !== 8) {
       return;
+    } else {
+      let [winner, secondPlace] = this.service.play(this.selectedGames);
+      console.log('vencedor! \n', winner);
+      console.log('segundo colocado \n', secondPlace);
+      this.router.navigate(['resultado', { winner, secondPlace }]);
     }
   }
-
 }
