@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { Observable, of, Subject } from "rxjs";
 import { catchError, takeUntil } from "rxjs/operators";
 import { Game } from 'src/models/game';
@@ -13,7 +12,7 @@ export class SelecaoComponent implements OnInit, OnDestroy {
   games$: Observable<Array<Game>>;
   loadingError$ = new Subject<boolean>();
   componentDestroyed$: Subject<boolean> = new Subject();
-  selectedGames: Game[];
+  selectedGames: Game[] = [];
 
   constructor(private service: GamesService) { }
 
@@ -33,8 +32,22 @@ export class SelecaoComponent implements OnInit, OnDestroy {
     this.componentDestroyed$.complete();
   }
 
+  valueChange(event: Game) {
+    if(event.checked) {
+      this.selectedGames.push(event)
+    } else {
+      this.selectedGames = this.selectedGames.filter(game => game.titulo !== event.titulo)
+    }
+    console.log(this.selectedGames)
+  }
+
   play() {
     console.log(this.selectedGames);
+    if(this.selectedGames.length == 8) {
+      this.service.play(this.selectedGames);
+    } else {
+      return;
+    }
   }
 
 }
