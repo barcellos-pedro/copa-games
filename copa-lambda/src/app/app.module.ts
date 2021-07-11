@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SelecaoComponent } from './selecao/selecao.component';
 import { CardComponent } from './card/card.component';
+import { GamesService } from './services/games.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { CardComponent } from './card/card.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [GamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
