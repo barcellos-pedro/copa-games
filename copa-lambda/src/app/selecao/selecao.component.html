@@ -13,9 +13,9 @@
     <div class="games">
         <div class="options">
             <div class="options__selected">
-                <p><span class="options__count">[0] de [8]</span> selecionados</p>
+                <p><span class="options__count">{{ selectedGames.length }} de 8</span> selecionados</p>
             </div>
-            <button type="button" class="play" (click)="play()">Gerar campeonato</button>
+            <button type="button" class="options__play" [disabled]="selectedGames.length < 8" (click)="play()">Gerar campeonato</button>
         </div>
         <div class="games__list" *ngIf="games$ | async as games; else loadingOrError">
             <ng-container *ngFor="let game of games">

@@ -64,6 +64,14 @@ button {
     cursor: pointer;
 }
 
+button:disabled,
+button[disabled]{
+  background-color: $silver;
+  color: #7E7E7E;
+  cursor: not-allowed;
+}
+
+
 .disabled {
     background-color: $silver;
     color: #7E7E7E;
@@ -76,3 +84,4 @@ button {
     justify-content: center;
     gap: 4rem;
 }
+
