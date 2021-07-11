@@ -24,6 +24,24 @@ export class GamesService {
 
   /**
    * 
+   * @param game
+   * @returns Game title
+   */
+  getTitle({ titulo }): string {
+    return titulo.slice(0, titulo.indexOf('(')).trim();
+  }
+
+  /**
+   * 
+   * @param game
+   * @returns Game console
+   */
+  getConsole({ titulo }): string {
+    return titulo.slice(titulo.indexOf('(') + 1, titulo.lastIndexOf(')'));
+  }
+
+  /**
+   * 
    * @param list
    * @returns List of paired games
    */
