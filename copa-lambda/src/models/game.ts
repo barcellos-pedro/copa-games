@@ -4,4 +4,5 @@ export interface Game {
     nota: number;
     ano: number;
     urlImagem: string;
+    checked?: boolean;
 }
