@@ -11,6 +11,7 @@ import { SelecaoComponent } from './selecao/selecao.component';
 import { CardComponent } from './card/card.component';
 import { GamesService } from './services/games.service';
 import { ResultadoComponent } from './resultado/resultado.component';
+import { ResultadoFinalComponent } from './resultado-final/resultado-final.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ResultadoComponent } from './resultado/resultado.component';
     HomeComponent,
     SelecaoComponent,
     CardComponent,
-    ResultadoComponent
+    ResultadoComponent,
+    ResultadoFinalComponent
   ],
   imports: [
     BrowserModule,
