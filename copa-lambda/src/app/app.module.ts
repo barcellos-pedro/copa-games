@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { SelecaoComponent } from './selecao/selecao.component';
 import { CardComponent } from './card/card.component';
 import { GamesService } from './services/games.service';
+import { ResultadoComponent } from './resultado/resultado.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GamesService } from './services/games.service';
     HeaderComponent,
     HomeComponent,
     SelecaoComponent,
-    CardComponent
+    CardComponent,
+    ResultadoComponent
   ],
   imports: [
     BrowserModule,
