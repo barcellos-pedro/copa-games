@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of, Subject } from 'rxjs';
 import { catchError, takeUntil } from 'rxjs/operators';
 import { Game } from 'src/models/game';
@@ -13,13 +13,15 @@ import { GamesService } from '../services/games.service';
 export class ResultadoComponent implements OnInit, OnDestroy {
   game$: Observable<Game>;
   winnerId: string;
+  secondPlaceId: string;
   componentDestroyed$: Subject<boolean> = new Subject();
   loadingError$ = new Subject<boolean>();
 
-  constructor(public service: GamesService, private route: ActivatedRoute) { }
+  constructor(public service: GamesService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.getGame();
+    setTimeout(()=> this.router.navigate(['resultado-final', { winner: this.winnerId, secondPlace: this.secondPlaceId }]), 3000);
   }
 
   ngOnDestroy(): void {
@@ -29,6 +31,7 @@ export class ResultadoComponent implements OnInit, OnDestroy {
 
   getGame(): void {
     this.winnerId = this.route.snapshot.paramMap.get('winner');
+    this.secondPlaceId = this.route.snapshot.paramMap.get('secondPlace');
     this.game$ = this.service.getGameById(this.winnerId).pipe(
       takeUntil(this.componentDestroyed$),
       catchError<any, any>((error) =>{
