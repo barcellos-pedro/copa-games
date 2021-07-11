@@ -31,4 +31,8 @@ export class SelecaoComponent implements OnInit, OnDestroy {
     this.componentDestroyed$.complete();
   }
 
+  onChange(event) {
+    console.log(event)
+  }
+
 }
