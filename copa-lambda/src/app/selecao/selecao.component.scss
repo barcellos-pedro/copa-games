@@ -69,9 +69,10 @@ button {
     color: #7E7E7E;
 }
 
-.games {
+.games > div {
     margin-top: 36px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 4rem;
 }
