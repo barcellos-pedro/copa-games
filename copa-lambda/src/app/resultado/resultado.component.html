@@ -1,1 +1,26 @@
-<p>resultado works!</p>
+<main class="resultado" *ngIf="game$ | async as game; else loadingOrError">
+    <div class="card">
+        <div class="card__body">
+            <div class="card__image">
+                <img [src]="game.urlImagem" alt="Imagem de {{ game.titulo }}">
+            </div>
+            <div class="card__info">
+                <div class="info">
+                    <p id="info__title">{{ service.getTitle(game) }}</p>
+                    <p id="info__details">{{ game.ano }} / {{ service.getConsole(game) }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<ng-template #loadingOrError>
+    <div class="error" *ngIf="loadingError$ | async; else loading">
+        Erro ao carregar os jogos.
+    </div>
+    <ng-template #loading>
+        <div class="loading">
+            Carregando jogos...
+        </div>
+    </ng-template>
+</ng-template>
