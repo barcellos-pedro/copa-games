@@ -4,7 +4,7 @@
             <img src="{{ game.urlImagem }}" alt="Imagem de {{ game.titulo }}">
         </div>
         <div class="card__info">
-            <p>{{ game.titulo }}</p>
+            <p>{{ retornaTitulo(game) }}</p>
             <p>{{ game.ano }} / {{ retornaConsole(game) }}</p>
         </div>
     </div>

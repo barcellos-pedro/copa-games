@@ -14,6 +14,10 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  retornaTitulo({ titulo }): string {
+    return titulo.slice(0, titulo.indexOf('(')).trim();
+  }
+
   retornaConsole({ titulo }): string {
     return titulo.slice(titulo.indexOf('(') + 1, titulo.lastIndexOf(')'));
   }
