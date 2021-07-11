@@ -1,6 +1,13 @@
 <div class="card form-group">
-    <input class="form-control" type="checkbox" [(ngModel)]="checked" [id]="game.id" [name]="game.titulo" [value]="game.id" (change)="onChange(game.id, checked)">
-        <label [for]="game.id">
+    <input
+        class="form-control"
+        type="checkbox"
+        [(ngModel)]="checked"
+        [id]="game.id"
+        [name]="game.titulo"
+        [value]="game.id"
+        (change)="onChange(game, checked)">
+    <label [for]="game.id">
         <div class="card__body">
             <div class="card__image">
                 <img src="{{ game.urlImagem }}" alt="Imagem de {{ game.titulo }}">
