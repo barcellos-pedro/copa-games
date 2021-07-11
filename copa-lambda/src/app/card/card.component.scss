@@ -37,3 +37,8 @@ img {
 input[type=checkbox] {
     display: none;
 }
+
+.checked {
+    border: 5px solid $purple;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}

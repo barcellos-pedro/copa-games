@@ -10,7 +10,7 @@
     <label [for]="game.id">
         <div class="card__body">
             <div class="card__image">
-                <img src="{{ game.urlImagem }}" alt="Imagem de {{ game.titulo }}">
+                <img [class.checked]="checked" src="{{ game.urlImagem }}" alt="Imagem de {{ game.titulo }}">
             </div>
             <div class="card__info">
                 <p>{{ retornaTitulo(game) }}</p>
