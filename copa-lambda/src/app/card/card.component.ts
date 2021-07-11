@@ -8,6 +8,7 @@ import { Game } from 'src/models/game';
 })
 export class CardComponent implements OnInit {
   @Input() game: Game;
+  @Input() disabled: boolean;
   @Output() notifyValue: EventEmitter<any> = new EventEmitter();
   checked: boolean;
 

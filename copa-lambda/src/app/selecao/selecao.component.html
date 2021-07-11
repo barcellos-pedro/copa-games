@@ -19,7 +19,7 @@
         </div>
         <div class="games__list" *ngIf="games$ | async as games; else loadingOrError">
             <ng-container *ngFor="let game of games">
-                <app-card [game]="game" (notifyValue)="valueChange($event)"></app-card>
+                <app-card [game]="game" [disabled]="selectedGames.length == 8" (notifyValue)="valueChange($event)"></app-card>
             </ng-container>
         </div>
     </div>

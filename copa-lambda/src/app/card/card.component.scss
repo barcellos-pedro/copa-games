@@ -5,6 +5,10 @@
     height: 283px;
 }
 
+.card.disabled {
+    opacity: 0.5;
+}
+
 .card__body {
     cursor: pointer;
 }
