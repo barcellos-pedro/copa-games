@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Game } from 'src/models/game';
 
 @Injectable({
@@ -19,6 +19,17 @@ export class GamesService {
   getGames(): Observable<Game[]> {
     return this.http.get(this.endpoint).pipe<Game[]>(
       catchError<any, any>(error => of(undefined))
+    );
+  }
+
+  /**
+   * Get game by id
+   * @param id 
+   * @returns Game
+   */
+  getGameById(id: string): Observable<Game> {
+    return this.getGames().pipe<Game>(
+      map((game: Game[]) => game.find(game => game.id == id))
     );
   }
 
@@ -75,9 +86,9 @@ export class GamesService {
     return game1Points > game2Points ? game1 : game2;
   }
 
-  play(gamesList: Game[]) {
+  play(gamesList: Game[]): string[] {
     if(!gamesList.length || gamesList.length < 8) {
-      return;
+      return [];
     }
     let quartas: any[] = this.pairGames(gamesList);
     let semi: any[] = [];
@@ -94,8 +105,10 @@ export class GamesService {
     let winner = this.battle(final[0], final[1]);
     let secondPlace = final.find((game: Game) => game.id !== winner.id);
 
-    console.log('vencedor! \n', winner);
-    console.log('segundo colocado \n', secondPlace);
+    // console.log('vencedor! \n', winner);
+    // console.log('segundo colocado \n', secondPlace);
+
+    return [winner.id, secondPlace.id];
 
     // mandar pra pagina de resultado => winner
     // mandar pra pagina de resultado final => [winner, secondPlace]
