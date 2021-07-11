@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of, Subject } from "rxjs";
 import { catchError, takeUntil } from "rxjs/operators";
 import { Game } from 'src/models/game';
@@ -14,7 +15,7 @@ export class SelecaoComponent implements OnInit, OnDestroy {
   componentDestroyed$: Subject<boolean> = new Subject();
   selectedGames: Game[] = [];
 
-  constructor(private service: GamesService) { }
+  constructor(private service: GamesService, private router: Router) { }
 
   ngOnInit(): void {
     this.games$ = this.service.getGames().pipe(
@@ -45,6 +46,7 @@ export class SelecaoComponent implements OnInit, OnDestroy {
     console.log(this.selectedGames);
     if(this.selectedGames.length == 8) {
       this.service.play(this.selectedGames);
+      this.router.navigate(['resultado']);
     } else {
       return;
     }
