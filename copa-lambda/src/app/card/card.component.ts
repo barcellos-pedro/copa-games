@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Game } from 'src/models/game';
 
 @Component({
@@ -8,6 +8,7 @@ import { Game } from 'src/models/game';
 })
 export class CardComponent implements OnInit {
   @Input() game: Game;
+  @Output() notifyValue: EventEmitter<any> = new EventEmitter();
   checked: boolean;
 
   constructor() { }
@@ -23,8 +24,8 @@ export class CardComponent implements OnInit {
     return titulo.slice(titulo.indexOf('(') + 1, titulo.lastIndexOf(')'));
   }
 
-  onChange(value, checked) {
-    console.log({ value, checked })
+  onChange(game: Game, checked) {
+    this.notifyValue.emit({ ...game, checked });
   }
 
 }
