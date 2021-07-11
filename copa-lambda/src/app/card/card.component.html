@@ -13,8 +13,8 @@
                 <img [class.checked]="checked" src="{{ game.urlImagem }}" alt="Imagem de {{ game.titulo }}">
             </div>
             <div class="card__info">
-                <p>{{ retornaTitulo(game) }}</p>
-                <p>{{ game.ano }} / {{ retornaConsole(game) }}</p>
+                <p>{{ service.getTitle(game) }}</p>
+                <p>{{ game.ano }} / {{ service.getConsole(game) }}</p>
             </div>
         </div>
     </label>
