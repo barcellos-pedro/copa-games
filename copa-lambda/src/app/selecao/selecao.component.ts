@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Observable, of, Subject } from "rxjs";
 import { catchError, takeUntil } from "rxjs/operators";
 import { Game } from 'src/models/game';
@@ -12,6 +13,7 @@ export class SelecaoComponent implements OnInit, OnDestroy {
   games$: Observable<Array<Game>>;
   loadingError$ = new Subject<boolean>();
   componentDestroyed$: Subject<boolean> = new Subject();
+  selectedGames: Game[];
 
   constructor(private service: GamesService) { }
 
@@ -31,8 +33,8 @@ export class SelecaoComponent implements OnInit, OnDestroy {
     this.componentDestroyed$.complete();
   }
 
-  onChange(event) {
-    console.log(event)
+  play() {
+    console.log(this.selectedGames);
   }
 
 }

@@ -5,6 +5,10 @@
     height: 283px;
 }
 
+.card__body {
+    cursor: pointer;
+}
+
 .card__info {
     p {
         width: 141px;
@@ -28,4 +32,8 @@ img {
     border-radius: 4px;
     height: 141px;
     width: 200px;
+}
+
+input[type=checkbox] {
+    display: none;
 }

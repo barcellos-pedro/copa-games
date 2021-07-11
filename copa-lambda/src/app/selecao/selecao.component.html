@@ -10,19 +10,16 @@
         <p>1. Seleção</p>
         <p>Para começar, selecione 8 jogos para entrar na competição e depois clique em Gerar Campeonato para prosseguir.</p>
     </div>
-    <div class="options">
-        <div class="options__selected">
-            <p><span class="options__count">[0] de [8]</span> selecionados</p>
-        </div>
-        <button class="play">Gerar campeonato</button>
-    </div>
     <div class="games">
-        <div *ngIf="games$ | async as games; else loadingOrError">
-            <ng-container *ngFor="let game of games; let i = index">
-                <input type="checkbox" [id]="game.id" [value]="i" (change)="onChange(i)">
-                <label [for]="game.id">
-                    <app-card [game]=game></app-card>
-                </label>
+        <div class="options">
+            <div class="options__selected">
+                <p><span class="options__count">[0] de [8]</span> selecionados</p>
+            </div>
+            <button type="button" class="play" (click)="play()">Gerar campeonato</button>
+        </div>
+        <div class="games__list" *ngIf="games$ | async as games; else loadingOrError">
+            <ng-container *ngFor="let game of games">
+                <app-card [game]="game"></app-card>
             </ng-container>
         </div>
     </div>

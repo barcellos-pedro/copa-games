@@ -8,6 +8,7 @@ import { Game } from 'src/models/game';
 })
 export class CardComponent implements OnInit {
   @Input() game: Game;
+  checked: boolean;
 
   constructor() { }
 
@@ -20,6 +21,10 @@ export class CardComponent implements OnInit {
 
   retornaConsole({ titulo }): string {
     return titulo.slice(titulo.indexOf('(') + 1, titulo.lastIndexOf(')'));
+  }
+
+  onChange(value, checked) {
+    console.log({ value, checked })
   }
 
 }

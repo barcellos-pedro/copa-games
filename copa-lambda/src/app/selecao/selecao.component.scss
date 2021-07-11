@@ -69,18 +69,10 @@ button {
     color: #7E7E7E;
 }
 
-.games > div {
+.games .games__list {
     margin-top: 36px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 4rem;
-}
-
-input[type=checkbox] {
-    display: none;
-}
-
-label {
-    cursor: pointer;
 }
