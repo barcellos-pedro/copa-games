@@ -21,7 +21,6 @@ export class SelecaoComponent implements OnInit, OnDestroy {
     this.games$ = this.service.getGames().pipe(
       takeUntil(this.componentDestroyed$),
       catchError<any, any>((error) => {
-        console.log('deu ruim')
         this.loadingError$.next(true);
         return of();
       })
@@ -39,18 +38,13 @@ export class SelecaoComponent implements OnInit, OnDestroy {
     } else {
       this.selectedGames = this.selectedGames.filter(game => game.titulo !== event.titulo)
     }
-    console.log(this.selectedGames)
   }
 
   play() {
-    console.log(this.selectedGames);
-
     if(this.selectedGames.length !== 8) {
       return;
     } else {
       let [winner, secondPlace] = this.service.play(this.selectedGames);
-      console.log('vencedor! \n', winner);
-      console.log('segundo colocado \n', secondPlace);
       this.router.navigate(['resultado', { winner, secondPlace }]);
     }
   }

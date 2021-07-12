@@ -105,13 +105,7 @@ export class GamesService {
     let winner = this.battle(final[0], final[1]);
     let secondPlace = final.find((game: Game) => game.id !== winner.id);
 
-    // console.log('vencedor! \n', winner);
-    // console.log('segundo colocado \n', secondPlace);
-
     return [winner.id, secondPlace.id];
-
-    // mandar pra pagina de resultado => winner
-    // mandar pra pagina de resultado final => [winner, secondPlace]
   }
 
 }

@@ -32,8 +32,6 @@ export class ResultadoFinalComponent implements OnInit, OnDestroy {
     this.winnerId = this.route.snapshot.paramMap.get('winner');
     this.secondPlaceId = this.route.snapshot.paramMap.get('secondPlace');
     
-    console.log([this.winnerId, this.secondPlaceId]);
-
     this.games$ = forkJoin({
       winner: this.service.getGameById(this.winnerId),
       secondPlace: this.service.getGameById(this.secondPlaceId)
