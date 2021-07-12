@@ -21,7 +21,7 @@ export class ResultadoComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getGame();
-    setTimeout(()=> this.router.navigate(['resultado-final', { winner: this.winnerId, secondPlace: this.secondPlaceId }]), 3000);
+    setTimeout(()=> this.router.navigate(['resultado-final', { winner: this.winnerId, secondPlace: this.secondPlaceId }]), 3050);
   }
 
   ngOnDestroy(): void {

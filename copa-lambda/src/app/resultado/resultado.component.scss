@@ -14,6 +14,12 @@
 .resultado .card {
     height: 520px;
     width: 258px;
+    animation: fadein 3s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 #info__title {
@@ -38,4 +44,10 @@ img {
     width: 268px;
     border-radius: 8px;
     border: 4px solid $sky-blue;
+    animation: scale 3s;
+}
+
+@keyframes scale {
+    from { transform: scale(0.5); };
+    to { transform: scale(1.1); };
 }
