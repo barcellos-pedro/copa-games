@@ -99,6 +99,9 @@ button[disabled]{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 4rem;
+    gap: 3rem;
+    @media(max-width: 667px) {
+        gap: 1rem;
+    }
 }
 
