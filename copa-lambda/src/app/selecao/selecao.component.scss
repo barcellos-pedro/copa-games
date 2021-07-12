@@ -40,21 +40,32 @@
 
 .description {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    gap: 1rem;
     > p:first-child {
         margin-right: 41px;
         font-size: 36px;
         color: $blue;
         font-weight: 700;
+        text-align: center;
+    }
+    > p:not(:first-child) {
+        width: 79%;
     }
 }
 
 .options {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
     margin-top: 45px;
+    @media(max-width: 554px) {
+        justify-content: center;
+    }
 }
 
 .options__count {
