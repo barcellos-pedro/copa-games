@@ -1,1 +1,48 @@
-<p>resultado-final works!</p>
+<div class="final">
+    <section class="header">
+        <a class="header__voltar" [routerLink]="['/']">
+            <img src="../../assets/images/seta-esquerda-branca.svg" alt="">
+            <p>Voltar para o início</p>
+        </a>
+        <p class="header__title">Seu resultado!</p>
+    </section>
+    <section class="final__showcase" *ngIf="games$ | async as games; else loadingOrError">
+        <ng-container *ngFor="let game of games; let i = index">
+            <fieldset class="card">
+                <legend *ngIf="game.id == winnerId">
+                    <img src="../../assets/images/PrimeiroLugar.svg" alt="Selo de campeão">
+                </legend>
+                <legend *ngIf="game.id == secondPlaceId">
+                    <img src="../../assets/images/SegundoLugar.svg" alt="Selo de segundo colocado">
+                </legend>
+                <div class="card__body">
+                    <div class="card__image">
+                        <img [src]="game.urlImagem" alt="Imagem de {{ game.titulo }}">
+                    </div>
+                    <div class="card__info">
+                        <div class="info">
+                            <p class="info__finalist" *ngIf="game.id == winnerId">Primeiro lugar</p>
+                            <p class="info__finalist" *ngIf="game.id == secondPlaceId">Segundo lugar</p>
+                            <p class="info__title">{{ service.getTitle(game) }}</p>
+                            <p class="info__details">{{ game.ano }} / {{ service.getConsole(game) }}</p>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </ng-container>
+    </section>
+    <div class="final__button">
+        <button type="button" [routerLink]="['/selecao']">Refazer campeonato</button>
+    </div>
+</div>
+
+<ng-template #loadingOrError>
+    <div class="error" *ngIf="loadingError$ | async; else loading">
+        Erro ao carregar os jogos.
+    </div>
+    <ng-template #loading>
+        <div class="loading">
+            Carregando jogos...
+        </div>
+    </ng-template>
+</ng-template>

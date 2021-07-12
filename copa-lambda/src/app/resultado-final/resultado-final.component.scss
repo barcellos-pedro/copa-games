@@ -1,0 +1,108 @@
+@import "../../assets/scss/main";
+
+.final {
+    padding-top: 130px;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 160vh;
+    background-color: $blue;
+}
+
+.header {
+    display: inline;
+    text-align: center;
+}
+
+.header__voltar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    img {
+        margin-right: 18px;
+    }
+    p {
+        color: $white;
+    }
+}
+
+.header__title {
+    font-weight: bold;
+    font-size: 48px;
+    color: $white;
+}
+
+.final__showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.card {
+    height: 570cpx;
+    width: 258px;
+    &:first-child {
+        margin-right: 100px;
+        transform: scale(1.3);
+        margin-bottom: 3rem;
+    }
+}
+
+.info p {
+    text-align: justify;
+}
+
+.info__finalist {
+    margin-top: 32px;
+    color: $white;
+}
+
+.info__title {
+    color: $white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 252px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.info__details {
+    color: $white;
+    width: 248px;
+    text-align: center;
+}
+
+.card__image img {
+    max-width: 100%;
+    height: 365px;
+    width: 268px;
+    border-radius: 8px;
+    border: 4px solid $sky-blue;
+}
+
+fieldset {
+    border: none;
+}
+
+legend img {
+    height: 70px;
+    width: 70px;
+}
+
+.final__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    button {
+        background-color: $green;
+        color: $black;
+        font-weight: 500;
+        padding: 16px 32px;
+        border-radius: 16px;
+        border: none;
+        cursor: pointer;
+    }
+}
