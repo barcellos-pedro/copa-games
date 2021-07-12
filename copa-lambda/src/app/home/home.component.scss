@@ -10,7 +10,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 0;
+    padding: 3rem 0 12rem;
     background-color: $blue;
 }
 
@@ -67,16 +67,14 @@ button:hover {
 @media (max-width: 667px) {
     .home {
         flex-direction: column-reverse;
+        padding: 3rem 0 0;
         gap: 1rem;
-    }
-
-    section,
-    article {
-        margin-left: 24px;
+        width: 100%;
     }
 
     .home__greeting {
         width: 50%;
+        padding-left: 1rem;
         margin: 0;
     }
 
@@ -87,6 +85,19 @@ button:hover {
             margin-left: 0;
         }
         margin-bottom: 73px;
+    }
+
+    section,
+    article {
+        margin-left: 24px;
+        width: 15rem;
+    }
+
+    p {
+        &:nth-child(2) {
+            margin-top: 12px;
+            font-size: 50px;
+        }
     }
 
     img{
