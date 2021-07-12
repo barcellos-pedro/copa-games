@@ -105,5 +105,9 @@ legend img {
         border-radius: 16px;
         border: none;
         cursor: pointer;
+        transition: all 0.2s ease;
+        &:hover {
+            background-color: $darker-green;
+        }
     }
 }
