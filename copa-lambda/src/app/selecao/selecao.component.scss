@@ -1,10 +1,10 @@
 @import '../../assets/scss/main';
 
 .selecao {
-    padding-top: 7rem;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 32px;
+    padding: 7rem 100px 32px;
+    @media(max-width: 667px) {
+        padding: 7rem 15px 32px;
+    }
 }
 
 .header {
@@ -33,6 +33,9 @@
 .header__title {
     font-size: 34px;
     color: $green;
+    @media(max-width:870px) {
+        margin-top: 3rem;
+    }
     span {
         font-weight: bold;
     }
@@ -54,6 +57,9 @@
     }
     > p:not(:first-child) {
         width: 79%;
+        @media(max-width: 667px) {
+            text-align: center;
+        }
     }
 }
 
