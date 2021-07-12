@@ -9,8 +9,8 @@ button {
 .home {    
     display: flex;
     justify-content: space-between;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    align-items: center;
+    padding: 3rem 0;
     background-color: $blue;
 }
 

@@ -4,7 +4,6 @@
     padding-top: 130px;
     padding-left: 100px;
     padding-right: 100px;
-    height: 160vh;
     background-color: $blue;
 }
 
@@ -37,6 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 5rem;
 }
 
@@ -96,6 +96,7 @@ legend img {
     display: flex;
     justify-content: center;
     margin-top: 100px;
+    padding-bottom: 42px;
     button {
         background-color: $green;
         color: $black;
